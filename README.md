@@ -15,7 +15,7 @@ Custom ERPNext app for Max Auto Cables.
 ## Installation on another bench
 
 1. Get the app into bench:
-   bench get-app https://github.com/ssa.max10/maxauto_custom.git
+   bench get-app https://github.com/ssamax10/maxauto_custom.git
 2. Install on target site:
    bench --site <site_name> install-app maxauto_custom
 3. Run migrations:
