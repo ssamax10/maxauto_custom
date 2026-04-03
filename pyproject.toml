@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/maxautocables/maxauto_custom"
+Homepage = "https://github.com/ssamax10/maxauto_custom"
 
 [tool.setuptools]
 packages = ["maxauto_custom", "maxauto", "maxauto.page", "maxauto.page.asset_label_sheet"]
