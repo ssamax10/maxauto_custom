@@ -1,1 +1,2 @@
-recursive-include asset_tools *.js *.html
+recursive-include maxauto *.js *.html *.json
+recursive-include public *

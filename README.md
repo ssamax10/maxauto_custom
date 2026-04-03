@@ -1,14 +1,27 @@
-# Asset Tools
+# MaxAuto Custom
 
-Custom ERPNext v15 app for printing 60×25 mm asset QR labels.
+Custom ERPNext app for Max Auto Cables.
 
 ## Features
-- QR code labels (ERPNext Asset deep link)
-- A4 sheet layout
-- Asset selection before printing
-- Location & calibration display
-- Works with ERPNext permissions
-- Docker & image-bake friendly
 
-## Usage
-Open:
+- Asset Label Sheet page for printing 60x25 mm asset QR labels
+- Works from ERPNext Assets workspace
+- Select, filter, and print selected assets
+
+## Route
+
+- /app/asset-label-sheet
+
+## Installation on another bench
+
+1. Get the app into bench:
+   bench get-app https://github.com/maxautocables/maxauto_custom.git
+2. Install on target site:
+   bench --site <site_name> install-app maxauto_custom
+3. Run migrations:
+   bench --site <site_name> migrate
+
+## Notes
+
+- Requires Frappe/ERPNext v16.
+- The workspace link to Asset Label Sheet is expected in the Assets workspace.

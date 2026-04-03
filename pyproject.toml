@@ -1,3 +1,40 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "maxauto_custom"
+version = "1.0.0"
+authors = [
+    {name = "Max Auto Cables Pvt Ltd", email = "info@maxautocables.com"},
+]
+description = "MaxAuto customizations for ERPNext including asset QR labels and DocTypes"
+requires-python = ">=3.10"
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "frappe",
+]
+
+[project.urls]
+Homepage = "https://github.com/maxautocables/maxauto_custom"
+
+[tool.setuptools]
+packages = ["maxauto_custom", "maxauto", "maxauto.page", "maxauto.page.asset_label_sheet"]
+
+[tool.setuptools.package-dir]
+maxauto_custom = "."
+maxauto = "maxauto"
+"maxauto.page" = "maxauto/page"
+"maxauto.page.asset_label_sheet" = "maxauto/page/asset_label_sheet"
+
+[tool.bench]
+app-dependencies = [
+    "frappe",
+]

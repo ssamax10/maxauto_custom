@@ -1,9 +1,9 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
-    name="asset_tools",
+    name="maxauto_custom",
     version="1.0.0",
-    description="Asset QR label printing tools for ERPNext",
+    description="MaxAuto customizations for ERPNext",
     author="Max Auto Cables Pvt Ltd",
     packages=find_packages(),
     include_package_data=True,
