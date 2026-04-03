@@ -8,7 +8,8 @@ version = "1.0.0"
 authors = [
     {name = "Max Auto Cables Pvt Ltd", email = "info@maxautocables.com"},
 ]
-description = "MaxAuto customizations for ERPNext including asset QR labels and DocTypes"
+description = "MaxAuto Manufacturing Platform - Comprehensive ERP for rope/cable manufacturing, CNC machining, and multi-unit operations"
+readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
     "Intended Audience :: Developers",
@@ -26,13 +27,53 @@ dependencies = [
 Homepage = "https://github.com/ssamax10/maxauto_custom"
 
 [tool.setuptools]
-packages = ["maxauto_custom", "maxauto", "maxauto.page", "maxauto.page.asset_label_sheet"]
+packages = [
+    "maxauto_custom",
+    "maxauto",
+    "maxauto.page",
+    "maxauto.page.asset_label_sheet",
+    "maxauto.engineering",
+    "maxauto.engineering.doctypes",
+    "maxauto.engineering.doctypes.engineering_project",
+    "maxauto.engineering.doctypes.feasibility_study",
+    "maxauto.engineering.doctypes.product_specification",
+    "maxauto.engineering.doctypes.engineering_project_link",
+    "maxauto.manufacturing",
+    "maxauto.manufacturing.doctypes",
+    "maxauto.manufacturing.doctypes.manufacturing_routing",
+    "maxauto.manufacturing.doctypes.manufacturing_operation_type",
+    "maxauto.manufacturing.doctypes.machine",
+    "maxauto.manufacturing.doctypes.machine_capability",
+    "maxauto.manufacturing.doctypes.manufacturing_routing_operation",
+    "maxauto.rope_cable",
+    "maxauto.rope_cable.doctypes",
+    "maxauto.rope_cable.doctypes.rope_construction",
+    "maxauto.rope_cable.doctypes.bobbin",
+    "maxauto.rope_cable.doctypes.stranding_batch",
+    "maxauto.rope_cable.doctypes.closing_batch",
+    "maxauto.rope_cable.doctypes.stranding_batch_bobbin",
+    "maxauto.rope_cable.doctypes.closing_batch_input",
+    "maxauto.cnc",
+    "maxauto.cnc.doctypes",
+    "maxauto.shopfloor",
+    "maxauto.shopfloor.doctypes",
+    "maxauto.shopfloor.doctypes.manufacturing_operation_execution",
+    "maxauto.shopfloor.doctypes.mes_event_log",
+    "maxauto.inventory",
+    "maxauto.inventory.doctypes",
+    "maxauto.inventory.doctypes.unit_wip_transfer",
+    "maxauto.quality",
+    "maxauto.quality.doctypes",
+    "maxauto.quality.doctypes.inspection_record",
+    "maxauto.quality.doctypes.inspection_test_result",
+    "maxauto.packing",
+    "maxauto.packing.doctypes",
+    "maxauto.packing.doctypes.packing_record",
+    "maxauto.mes",
+]
 
-[tool.setuptools.package-dir]
-maxauto_custom = "."
-maxauto = "maxauto"
-"maxauto.page" = "maxauto/page"
-"maxauto.page.asset_label_sheet" = "maxauto/page/asset_label_sheet"
+[tool.setuptools.package-data]
+maxauto = ["*/doctypes/*/", "*/doctypes/*/*.*"]
 
 [tool.bench]
 app-dependencies = [

@@ -1,0 +1,118 @@
+{
+  "autoname": "PAK-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "packing_date",
+    "product",
+    "quantity",
+    "packing_type",
+    "container_id",
+    "container_weight_kg",
+    "total_weight_kg",
+    "batch_number",
+    "packing_status",
+    "warehouse",
+    "packed_by",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "packing_date",
+      "fieldtype": "Date",
+      "label": "Packing Date",
+      "default": "today",
+      "reqd": 1
+    },
+    {
+      "fieldname": "product",
+      "fieldtype": "Link",
+      "label": "Product",
+      "options": "Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "quantity",
+      "fieldtype": "Float",
+      "label": "Quantity",
+      "reqd": 1
+    },
+    {
+      "fieldname": "packing_type",
+      "fieldtype": "Select",
+      "label": "Packing Type",
+      "options": "Drum\nCoil\nSpooled\nBag\nBox\nOther",
+      "reqd": 1
+    },
+    {
+      "fieldname": "container_id",
+      "fieldtype": "Data",
+      "label": "Container/Drum ID"
+    },
+    {
+      "fieldname": "container_weight_kg",
+      "fieldtype": "Float",
+      "label": "Container Weight (kg)"
+    },
+    {
+      "fieldname": "total_weight_kg",
+      "fieldtype": "Float",
+      "label": "Total Weight (kg)"
+    },
+    {
+      "fieldname": "batch_number",
+      "fieldtype": "Data",
+      "label": "Batch Number"
+    },
+    {
+      "fieldname": "packing_status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nPacked\nQuality Checked\nReady for Dispatch\nDispatched",
+      "default": "Packed"
+    },
+    {
+      "fieldname": "warehouse",
+      "fieldtype": "Link",
+      "label": "Warehouse",
+      "options": "Warehouse"
+    },
+    {
+      "fieldname": "packed_by",
+      "fieldtype": "Link",
+      "label": "Packed By",
+      "options": "User"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Packing",
+  "name": "Packing Record",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "role": "Packing Manager",
+      "submit": 1,
+      "write": 1
+    }
+  ]
+}

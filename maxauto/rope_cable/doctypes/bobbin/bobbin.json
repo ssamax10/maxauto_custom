@@ -1,0 +1,103 @@
+{
+  "autoname": "BOB-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "bobbin_id",
+    "bobbin_type",
+    "capacity_kg",
+    "status",
+    "location",
+    "current_load_kg",
+    "material",
+    "diameter_mm",
+    "last_used",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "bobbin_id",
+      "fieldtype": "Data",
+      "label": "Bobbin ID",
+      "reqd": 1,
+      "unique": 1,
+      "example": "B001, B002"
+    },
+    {
+      "fieldname": "bobbin_type",
+      "fieldtype": "Select",
+      "label": "Type",
+      "options": "Spooling\nStranding\nOther",
+      "reqd": 1
+    },
+    {
+      "fieldname": "capacity_kg",
+      "fieldtype": "Float",
+      "label": "Capacity (kg)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Empty\nSpooling\nLoaded\nStranding\nAvailable",
+      "default": "Empty",
+      "reqd": 1
+    },
+    {
+      "fieldname": "location",
+      "fieldtype": "Link",
+      "label": "Location",
+      "options": "Warehouse"
+    },
+    {
+      "fieldname": "current_load_kg",
+      "fieldtype": "Float",
+      "label": "Current Load (kg)",
+      "default": 0
+    },
+    {
+      "fieldname": "material",
+      "fieldtype": "Link",
+      "label": "Material",
+      "options": "Item"
+    },
+    {
+      "fieldname": "diameter_mm",
+      "fieldtype": "Float",
+      "label": "Bobbin Diameter (mm)"
+    },
+    {
+      "fieldname": "last_used",
+      "fieldtype": "DateTime",
+      "label": "Last Used"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 0,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Rope &amp; Cable",
+  "name": "Bobbin",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Operator"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "autoname": "MC-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "machine",
+    "capability_name",
+    "capability_code"
+  ],
+  "fields": [
+    {
+      "fieldname": "machine",
+      "fieldtype": "Link",
+      "label": "Machine",
+      "options": "Machine",
+      "reqd": 1
+    },
+    {
+      "fieldname": "capability_name",
+      "fieldtype": "Select",
+      "label": "Capability",
+      "options": "Turning\nMilling\nDrilling\nGrinding\nRope Closing\nSpooling\nStranding\nCutting\nInspection",
+      "reqd": 1
+    },
+    {
+      "fieldname": "capability_code",
+      "fieldtype": "Data",
+      "label": "Capability Code"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 0,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Manufacturing",
+  "name": "Machine Capability",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "write": 1
+    }
+  ]
+}

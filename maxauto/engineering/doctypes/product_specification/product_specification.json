@@ -1,0 +1,109 @@
+{
+  "autoname": "SPEC-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "document_type": "",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "product_name",
+    "product_type",
+    "construction_code",
+    "rope_cable_section",
+    "wire_diameter",
+    "strand_count",
+    "core_type",
+    "breaking_load",
+    "density",
+    "specifications_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "product_name",
+      "fieldtype": "Data",
+      "label": "Product Name",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "product_type",
+      "fieldtype": "Select",
+      "label": "Product Type",
+      "options": "Rope\nCable\nStrand\nWire",
+      "reqd": 1
+    },
+    {
+      "fieldname": "construction_code",
+      "fieldtype": "Data",
+      "label": "Construction Code",
+      "example": "6x19, 8x19, etc."
+    },
+    {
+      "fieldname": "rope_cable_section",
+      "fieldtype": "Section Break",
+      "label": "Rope/Cable Specifications"
+    },
+    {
+      "fieldname": "wire_diameter",
+      "fieldtype": "Float",
+      "label": "Wire Diameter (mm)",
+      "precision": 3
+    },
+    {
+      "fieldname": "strand_count",
+      "fieldtype": "Int",
+      "label": "Strand Count"
+    },
+    {
+      "fieldname": "core_type",
+      "fieldtype": "Select",
+      "label": "Core Type",
+      "options": "Steel\nFiber\nWire Rope"
+    },
+    {
+      "fieldname": "breaking_load",
+      "fieldtype": "Float",
+      "label": "Breaking Load (kN)"
+    },
+    {
+      "fieldname": "density",
+      "fieldtype": "Float",
+      "label": "Density (kg/m)"
+    },
+    {
+      "fieldname": "specifications_notes",
+      "fieldtype": "Text Editor",
+      "label": "Additional Specifications"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "links": [],
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Engineering",
+  "name": "Product Specification",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "amend": 1,
+      "cancel": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "Desc"
+}

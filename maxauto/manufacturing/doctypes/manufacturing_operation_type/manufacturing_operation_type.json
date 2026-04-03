@@ -1,0 +1,93 @@
+{
+  "autoname": "MOT-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "operation_name",
+    "operation_code",
+    "category",
+    "machine_type",
+    "description",
+    "cycle_time_minutes",
+    "external_vendor",
+    "vendor_name",
+    "is_inspection"
+  ],
+  "fields": [
+    {
+      "fieldname": "operation_name",
+      "fieldtype": "Data",
+      "label": "Operation Name",
+      "reqd": 1,
+      "unique": 1,
+      "example": "Stranding, Spooling, Closing"
+    },
+    {
+      "fieldname": "operation_code",
+      "fieldtype": "Data",
+      "label": "Operation Code",
+      "unique": 1
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Select",
+      "label": "Category",
+      "options": "Internal\nExternal Processing\nQC\nInspection",
+      "default": "Internal"
+    },
+    {
+      "fieldname": "machine_type",
+      "fieldtype": "Link",
+      "label": "Machine Type",
+      "options": "Machine Type"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "cycle_time_minutes",
+      "fieldtype": "Float",
+      "label": "Standard Cycle Time (minutes)"
+    },
+    {
+      "fieldname": "external_vendor",
+      "fieldtype": "Check",
+      "label": "Is External Process",
+      "default": 0
+    },
+    {
+      "fieldname": "vendor_name",
+      "fieldtype": "Link",
+      "label": "Vendor",
+      "options": "Supplier",
+      "depends_on": "external_vendor"
+    },
+    {
+      "fieldname": "is_inspection",
+      "fieldtype": "Check",
+      "label": "Is Inspection Step",
+      "default": 0
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Manufacturing",
+  "name": "Manufacturing Operation Type",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "submit": 1,
+      "write": 1
+    }
+  ]
+}

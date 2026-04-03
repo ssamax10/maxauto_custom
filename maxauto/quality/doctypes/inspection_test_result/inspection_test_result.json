@@ -1,0 +1,58 @@
+{
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "test_name",
+    "test_parameter",
+    "expected_value",
+    "actual_value",
+    "test_result",
+    "remarks"
+  ],
+  "fields": [
+    {
+      "fieldname": "test_name",
+      "fieldtype": "Data",
+      "label": "Test Name",
+      "reqd": 1,
+      "example": "Diameter, Breaking Load, Twist"
+    },
+    {
+      "fieldname": "test_parameter",
+      "fieldtype": "Data",
+      "label": "Test Parameter",
+      "example": "mm, kN, turns/m"
+    },
+    {
+      "fieldname": "expected_value",
+      "fieldtype": "Data",
+      "label": "Expected Value"
+    },
+    {
+      "fieldname": "actual_value",
+      "fieldtype": "Data",
+      "label": "Actual Value"
+    },
+    {
+      "fieldname": "test_result",
+      "fieldtype": "Select",
+      "label": "Result",
+      "options": "Pass\nFail\nConditional",
+      "reqd": 1
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Text",
+      "label": "Remarks"
+    }
+  ],
+  "idx": 0,
+  "issingle": 0,
+  "istable": 1,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Quality",
+  "name": "Inspection Test Result",
+  "owner": "Administrator"
+}

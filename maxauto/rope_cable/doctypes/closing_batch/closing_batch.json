@@ -1,0 +1,116 @@
+{
+  "autoname": "CB-.##-MM/DD/YY",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "batch_date",
+    "product_specification",
+    "closing_machine",
+    "input_strands",
+    "total_input_qty_kg",
+    "output_rope_qty_kg",
+    "waste_qty_kg",
+    "batch_status",
+    "operator",
+    "start_time",
+    "end_time",
+    "quality_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "batch_date",
+      "fieldtype": "Date",
+      "label": "Batch Date",
+      "default": "today",
+      "reqd": 1
+    },
+    {
+      "fieldname": "product_specification",
+      "fieldtype": "Link",
+      "label": "Product Specification",
+      "options": "Product Specification"
+    },
+    {
+      "fieldname": "closing_machine",
+      "fieldtype": "Link",
+      "label": "Closing Machine",
+      "options": "Machine"
+    },
+    {
+      "fieldname": "input_strands",
+      "fieldtype": "Table",
+      "label": "Input Strands",
+      "options": "Closing Batch Input"
+    },
+    {
+      "fieldname": "total_input_qty_kg",
+      "fieldtype": "Float",
+      "label": "Total Input Qty (kg)",
+      "read_only": 1
+    },
+    {
+      "fieldname": "output_rope_qty_kg",
+      "fieldtype": "Float",
+      "label": "Output Rope Qty (kg)"
+    },
+    {
+      "fieldname": "waste_qty_kg",
+      "fieldtype": "Float",
+      "label": "Waste (kg)"
+    },
+    {
+      "fieldname": "batch_status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nIn Progress\nCompleted\nCancelled",
+      "default": "Draft"
+    },
+    {
+      "fieldname": "operator",
+      "fieldtype": "Link",
+      "label": "Operator",
+      "options": "User"
+    },
+    {
+      "fieldname": "start_time",
+      "fieldtype": "DateTime",
+      "label": "Start Time"
+    },
+    {
+      "fieldname": "end_time",
+      "fieldtype": "DateTime",
+      "label": "End Time"
+    },
+    {
+      "fieldname": "quality_notes",
+      "fieldtype": "Text",
+      "label": "Quality Notes"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Rope &amp; Cable",
+  "name": "Closing Batch",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "role": "Operator",
+      "submit": 1,
+      "write": 1
+    }
+  ]
+}

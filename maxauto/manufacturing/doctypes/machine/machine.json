@@ -1,0 +1,117 @@
+{
+  "autoname": "MACH-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "machine_id",
+    "machine_name",
+    "machine_type",
+    "manufacturer",
+    "model_number",
+    "factory_unit",
+    "specifications_section",
+    "axis",
+    "spindle_rpm",
+    "table_size",
+    "installation_date",
+    "status",
+    "maintenance_due_date"
+  ],
+  "fields": [
+    {
+      "fieldname": "machine_id",
+      "fieldtype": "Data",
+      "label": "Machine ID",
+      "reqd": 1,
+      "unique": 1,
+      "example": "CNC01, VMC02, STRANDER01"
+    },
+    {
+      "fieldname": "machine_name",
+      "fieldtype": "Data",
+      "label": "Machine Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "machine_type",
+      "fieldtype": "Select",
+      "label": "Machine Type",
+      "options": "CNC\nVMC\nStrander\nCloser\nSpooler\nCutter\nOther",
+      "reqd": 1
+    },
+    {
+      "fieldname": "manufacturer",
+      "fieldtype": "Data",
+      "label": "Manufacturer"
+    },
+    {
+      "fieldname": "model_number",
+      "fieldtype": "Data",
+      "label": "Model Number"
+    },
+    {
+      "fieldname": "factory_unit",
+      "fieldtype": "Link",
+      "label": "Factory Unit",
+      "options": "Warehouse"
+    },
+    {
+      "fieldname": "specifications_section",
+      "fieldtype": "Section Break",
+      "label": "Specifications"
+    },
+    {
+      "fieldname": "axis",
+      "fieldtype": "Int",
+      "label": "Axis (for CNC)",
+      "example": 3, 5
+    },
+    {
+      "fieldname": "spindle_rpm",
+      "fieldtype": "Int",
+      "label": "Spindle RPM (Max)"
+    },
+    {
+      "fieldname": "table_size",
+      "fieldtype": "Data",
+      "label": "Table Size (mm)",
+      "example": "600x400"
+    },
+    {
+      "fieldname": "installation_date",
+      "fieldtype": "Date",
+      "label": "Installation Date"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Operational\nMaintenance\nDown\nDecommissioned",
+      "default": "Operational"
+    },
+    {
+      "fieldname": "maintenance_due_date",
+      "fieldtype": "Date",
+      "label": "Next Maintenance Due"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Manufacturing",
+  "name": "Machine",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "submit": 1,
+      "write": 1
+    }
+  ]
+}

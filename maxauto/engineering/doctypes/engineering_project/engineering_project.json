@@ -1,0 +1,180 @@
+{
+  "actions": [],
+  "allow_on_submit": 0,
+  "autoname": "ERA-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "document_type": "",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "project_id",
+    "customer",
+    "drawing_number",
+    "revision",
+    "project_status",
+    "material",
+    "description_section",
+    "description",
+    "material_specification_section",
+    "raw_material",
+    "material_grade",
+    "specifications_section",
+    "specifications",
+    "links_section",
+    "linked_sales_orders",
+    "linked_work_orders",
+    "created_date",
+    "modified_date"
+  ],
+  "fields": [
+    {
+      "fieldname": "project_id",
+      "fieldtype": "Data",
+      "label": "Project ID",
+      "reqd": 1,
+      "unique": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1
+    },
+    {
+      "fieldname": "drawing_number",
+      "fieldtype": "Data",
+      "label": "Drawing Number",
+      "reqd": 1
+    },
+    {
+      "fieldname": "revision",
+      "fieldtype": "Data",
+      "label": "Revision",
+      "default": "Rev01"
+    },
+    {
+      "fieldname": "project_status",
+      "fieldtype": "Select",
+      "label": "Project Status",
+      "options": "Draft\nApproved\nIn Progress\nCompleted\nOn Hold\nCancelled",
+      "default": "Draft",
+      "reqd": 1
+    },
+    {
+      "fieldname": "material",
+      "fieldtype": "Link",
+      "label": "Raw Material Item",
+      "options": "Item"
+    },
+    {
+      "fieldname": "description_section",
+      "fieldtype": "Section Break",
+      "label": "Details"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Text Editor",
+      "label": "Description"
+    },
+    {
+      "fieldname": "material_specification_section",
+      "fieldtype": "Section Break",
+      "label": "Material Specification"
+    },
+    {
+      "fieldname": "raw_material",
+      "fieldtype": "Data",
+      "label": "Raw Material Type"
+    },
+    {
+      "fieldname": "material_grade",
+      "fieldtype": "Data",
+      "label": "Material Grade"
+    },
+    {
+      "fieldname": "specifications_section",
+      "fieldtype": "Section Break",
+      "label": "Specifications"
+    },
+    {
+      "fieldname": "specifications",
+      "fieldtype": "Text Editor",
+      "label": "Technical Specifications"
+    },
+    {
+      "fieldname": "links_section",
+      "fieldtype": "Section Break",
+      "label": "Links"
+    },
+    {
+      "fieldname": "linked_sales_orders",
+      "fieldtype": "Table",
+      "label": "Linked Sales Orders",
+      "options": "Engineering Project Link"
+    },
+    {
+      "fieldname": "linked_work_orders",
+      "fieldtype": "Table",
+      "label": "Linked Work Orders",
+      "options": "Engineering Project Link"
+    },
+    {
+      "fieldname": "created_date",
+      "fieldtype": "Date",
+      "label": "Created Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "modified_date",
+      "fieldtype": "Date",
+      "label": "Last Modified Date",
+      "read_only": 1
+    }
+  ],
+  "idx": 0,
+  "image_field": "",
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "links": [],
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Engineering",
+  "name": "Engineering Project",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "amend": 1,
+      "cancel": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "if_owner": 0,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "role": "User"
+    }
+  ],
+  "quick_entry": 1,
+  "read_only": 0,
+  "read_only_onload": 0,
+  "show_name_in_global_search": 1,
+  "sort_field": "modified",
+  "sort_order": "Desc",
+  "state": "Draft",
+  "track_changes": 1
+}

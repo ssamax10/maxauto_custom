@@ -1,0 +1,143 @@
+{
+  "autoname": "MOE-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "work_order",
+    "operation",
+    "machine",
+    "operator",
+    "start_time",
+    "end_time",
+    "planned_qty",
+    "actual_qty",
+    "rejected_qty",
+    "execution_section",
+    "execution_notes",
+    "downtime_minutes",
+    "downtime_reason",
+    "quality_section",
+    "quality_status",
+    "inspection_remarks"
+  ],
+  "fields": [
+    {
+      "fieldname": "work_order",
+      "fieldtype": "Link",
+      "label": "Work Order",
+      "options": "Work Order"
+    },
+    {
+      "fieldname": "operation",
+      "fieldtype": "Link",
+      "label": "Operation",
+      "options": "Manufacturing Operation Type"
+    },
+    {
+      "fieldname": "machine",
+      "fieldtype": "Link",
+      "label": "Machine",
+      "options": "Machine",
+      "reqd": 1
+    },
+    {
+      "fieldname": "operator",
+      "fieldtype": "Link",
+      "label": "Operator",
+      "options": "User"
+    },
+    {
+      "fieldname": "start_time",
+      "fieldtype": "DateTime",
+      "label": "Start Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "end_time",
+      "fieldtype": "DateTime",
+      "label": "End Time"
+    },
+    {
+      "fieldname": "planned_qty",
+      "fieldtype": "Float",
+      "label": "Planned Qty"
+    },
+    {
+      "fieldname": "actual_qty",
+      "fieldtype": "Float",
+      "label": "Actual Qty Produced",
+      "reqd": 1
+    },
+    {
+      "fieldname": "rejected_qty",
+      "fieldtype": "Float",
+      "label": "Rejected Qty",
+      "default": 0
+    },
+    {
+      "fieldname": "execution_section",
+      "fieldtype": "Section Break",
+      "label": "Execution Details"
+    },
+    {
+      "fieldname": "execution_notes",
+      "fieldtype": "Text",
+      "label": "Execution Notes"
+    },
+    {
+      "fieldname": "downtime_minutes",
+      "fieldtype": "Float",
+      "label": "Downtime (minutes)",
+      "default": 0
+    },
+    {
+      "fieldname": "downtime_reason",
+      "fieldtype": "Select",
+      "label": "Downtime Reason",
+      "options": "Machine Breakdown\nOperator Absence\nMaterial Shortage\nSetup\nOther"
+    },
+    {
+      "fieldname": "quality_section",
+      "fieldtype": "Section Break",
+      "label": "Quality"
+    },
+    {
+      "fieldname": "quality_status",
+      "fieldtype": "Select",
+      "label": "Quality Status",
+      "options": "Good\nWith Minor Defects\nWith Major Defects\nNot Inspected",
+      "default": "Not Inspected"
+    },
+    {
+      "fieldname": "inspection_remarks",
+      "fieldtype": "Text",
+      "label": "Inspection Remarks"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Shopfloor",
+  "name": "Manufacturing Operation Execution",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "role": "Operator",
+      "submit": 1,
+      "write": 1
+    }
+  ]
+}

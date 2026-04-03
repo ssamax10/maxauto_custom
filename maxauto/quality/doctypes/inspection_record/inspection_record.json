@@ -1,0 +1,93 @@
+{
+  "autoname": "INP-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "inspection_date",
+    "batch_number",
+    "product",
+    "inspection_type",
+    "inspector",
+    "test_results",
+    "result",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "inspection_date",
+      "fieldtype": "Date",
+      "label": "Inspection Date",
+      "default": "today",
+      "reqd": 1
+    },
+    {
+      "fieldname": "batch_number",
+      "fieldtype": "Data",
+      "label": "Batch Number",
+      "reqd": 1
+    },
+    {
+      "fieldname": "product",
+      "fieldtype": "Link",
+      "label": "Product",
+      "options": "Item"
+    },
+    {
+      "fieldname": "inspection_type",
+      "fieldtype": "Select",
+      "label": "Inspection Type",
+      "options": "Incoming\nIn-Process\nFinal\nOther",
+      "default": "Final"
+    },
+    {
+      "fieldname": "inspector",
+      "fieldtype": "Link",
+      "label": "Inspector",
+      "options": "User"
+    },
+    {
+      "fieldname": "test_results",
+      "fieldtype": "Table",
+      "label": "Test Results",
+      "options": "Inspection Test Result"
+    },
+    {
+      "fieldname": "result",
+      "fieldtype": "Select",
+      "label": "Overall Result",
+      "options": "Pass\nFail\nConditional Pass",
+      "reqd": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Quality",
+  "name": "Inspection Record",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "role": "Quality Inspector",
+      "submit": 1,
+      "write": 1
+    }
+  ]
+}

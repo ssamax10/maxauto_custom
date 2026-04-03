@@ -1,0 +1,110 @@
+{
+  "autoname": "ROPE-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "construction_code",
+    "construction_name",
+    "strand_count",
+    "wires_per_strand",
+    "core_type",
+    "wire_diameter_mm",
+    "rope_diameter_nominal",
+    "construction_details",
+    "breaking_load_kn",
+    "density_kg_m",
+    "is_standard",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "construction_code",
+      "fieldtype": "Data",
+      "label": "Construction Code",
+      "reqd": 1,
+      "unique": 1,
+      "example": "6x19, 8x19, 6x36"
+    },
+    {
+      "fieldname": "construction_name",
+      "fieldtype": "Data",
+      "label": "Construction Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "strand_count",
+      "fieldtype": "Int",
+      "label": "Strand Count",
+      "reqd": 1
+    },
+    {
+      "fieldname": "wires_per_strand",
+      "fieldtype": "Int",
+      "label": "Wires Per Strand",
+      "reqd": 1
+    },
+    {
+      "fieldname": "core_type",
+      "fieldtype": "Select",
+      "label": "Core Type",
+      "options": "Steel\nFiber\nIndependent Wire Rope",
+      "reqd": 1
+    },
+    {
+      "fieldname": "wire_diameter_mm",
+      "fieldtype": "Float",
+      "label": "Wire Diameter (mm)",
+      "precision": 3
+    },
+    {
+      "fieldname": "rope_diameter_nominal",
+      "fieldtype": "Float",
+      "label": "Nominal Rope Diameter (mm)"
+    },
+    {
+      "fieldname": "construction_details",
+      "fieldtype": "Section Break",
+      "label": "Technical Details"
+    },
+    {
+      "fieldname": "breaking_load_kn",
+      "fieldtype": "Float",
+      "label": "Breaking Load (kN)"
+    },
+    {
+      "fieldname": "density_kg_m",
+      "fieldtype": "Float",
+      "label": "Density (kg/m)"
+    },
+    {
+      "fieldname": "is_standard",
+      "fieldtype": "Check",
+      "label": "Is Standard Construction",
+      "default": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Rope &amp; Cable",
+  "name": "Rope Construction",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "submit": 1,
+      "write": 1
+    }
+  ]
+}

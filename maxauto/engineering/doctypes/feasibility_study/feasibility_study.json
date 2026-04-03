@@ -1,0 +1,97 @@
+{
+  "autoname": "FS-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "document_type": "",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "engineering_project",
+    "feasibility_title",
+    "study_date",
+    "machine_required",
+    "cycle_time_estimate",
+    "risk_assessment",
+    "recommendations",
+    "study_status"
+  ],
+  "fields": [
+    {
+      "fieldname": "engineering_project",
+      "fieldtype": "Link",
+      "label": "Engineering Project",
+      "options": "Engineering Project",
+      "reqd": 1
+    },
+    {
+      "fieldname": "feasibility_title",
+      "fieldtype": "Data",
+      "label": "Study Title",
+      "reqd": 1
+    },
+    {
+      "fieldname": "study_date",
+      "fieldtype": "Date",
+      "label": "Study Date",
+      "default": "today"
+    },
+    {
+      "fieldname": "machine_required",
+      "fieldtype": "Data",
+      "label": "Machine Required",
+      "example": "CNC/VMC/Strander"
+    },
+    {
+      "fieldname": "cycle_time_estimate",
+      "fieldtype": "Float",
+      "label": "Cycle Time Estimate (minutes)"
+    },
+    {
+      "fieldname": "risk_assessment",
+      "fieldtype": "Text Editor",
+      "label": "Risk Assessment"
+    },
+    {
+      "fieldname": "recommendations",
+      "fieldtype": "Text Editor",
+      "label": "Recommendations"
+    },
+    {
+      "fieldname": "study_status",
+      "fieldtype": "Select",
+      "label": "Study Status",
+      "options": "Draft\nIn Review\nApproved\nRejected",
+      "default": "Draft"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "links": [],
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Engineering",
+  "name": "Feasibility Study",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "amend": 1,
+      "cancel": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "Desc"
+}

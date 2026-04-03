@@ -1,0 +1,72 @@
+{
+  "autoname": "MR-.######",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "document_type": "",
+  "field_order": [
+    "product_item",
+    "product_specification",
+    "total_operations",
+    "routing_operations",
+    "version",
+    "is_active"
+  ],
+  "fields": [
+    {
+      "fieldname": "product_item",
+      "fieldtype": "Link",
+      "label": "Product Item",
+      "options": "Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "product_specification",
+      "fieldtype": "Link",
+      "label": "Product Specification",
+      "options": "Product Specification"
+    },
+    {
+      "fieldname": "total_operations",
+      "fieldtype": "Int",
+      "label": "Total Operations",
+      "read_only": 1
+    },
+    {
+      "fieldname": "routing_operations",
+      "fieldtype": "Table",
+      "label": "Operations",
+      "options": "Manufacturing Routing Operation"
+    },
+    {
+      "fieldname": "version",
+      "fieldtype": "Int",
+      "label": "Version",
+      "default": 1
+    },
+    {
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Is Active",
+      "default": 1
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 1,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Manufacturing",
+  "name": "Manufacturing Routing",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "submit": 1,
+      "write": 1
+    }
+  ]
+}

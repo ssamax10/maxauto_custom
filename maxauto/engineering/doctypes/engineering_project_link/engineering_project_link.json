@@ -1,0 +1,33 @@
+{
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "doctype_name",
+    "docname"
+  ],
+  "fields": [
+    {
+      "fieldname": "doctype_name",
+      "fieldtype": "Select",
+      "label": "DocType",
+      "options": "Sales Order\nWork Order",
+      "reqd": 1
+    },
+    {
+      "fieldname": "docname",
+      "fieldtype": "Dynamic Link",
+      "label": "Document",
+      "options": "doctype_name",
+      "reqd": 1
+    }
+  ],
+  "idx": 0,
+  "issingle": 0,
+  "istable": 1,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Engineering",
+  "name": "Engineering Project Link",
+  "owner": "Administrator"
+}

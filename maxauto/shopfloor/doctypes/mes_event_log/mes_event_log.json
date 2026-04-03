@@ -1,0 +1,112 @@
+{
+  "autoname": "MEL-.############",
+  "creation": "2025-04-03 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "field_order": [
+    "event_timestamp",
+    "event_type",
+    "machine",
+    "operator",
+    "manufacturing_operation_execution",
+    "event_details_section",
+    "qty_produced",
+    "qty_rejected",
+    "downtime_minutes",
+    "event_description",
+    "error_code",
+    "acknowledgment_status"
+  ],
+  "fields": [
+    {
+      "fieldname": "event_timestamp",
+      "fieldtype": "DateTime",
+      "label": "Event Timestamp",
+      "default": "now",
+      "read_only": 1
+    },
+    {
+      "fieldname": "event_type",
+      "fieldtype": "Select",
+      "label": "Event Type",
+      "options": "Machine Start\nMachine Stop\nOperation Complete\nDowntime\nError\nQuality Alert\nMaterial Alert",
+      "reqd": 1
+    },
+    {
+      "fieldname": "machine",
+      "fieldtype": "Link",
+      "label": "Machine",
+      "options": "Machine"
+    },
+    {
+      "fieldname": "operator",
+      "fieldtype": "Link",
+      "label": "Operator",
+      "options": "User"
+    },
+    {
+      "fieldname": "manufacturing_operation_execution",
+      "fieldtype": "Link",
+      "label": "Manufacturing Operation Execution",
+      "options": "Manufacturing Operation Execution"
+    },
+    {
+      "fieldname": "event_details_section",
+      "fieldtype": "Section Break",
+      "label": "Event Details"
+    },
+    {
+      "fieldname": "qty_produced",
+      "fieldtype": "Float",
+      "label": "Qty Produced"
+    },
+    {
+      "fieldname": "qty_rejected",
+      "fieldtype": "Float",
+      "label": "Qty Rejected"
+    },
+    {
+      "fieldname": "downtime_minutes",
+      "fieldtype": "Float",
+      "label": "Downtime (minutes)"
+    },
+    {
+      "fieldname": "event_description",
+      "fieldtype": "Text",
+      "label": "Event Description"
+    },
+    {
+      "fieldname": "error_code",
+      "fieldtype": "Data",
+      "label": "Error Code"
+    },
+    {
+      "fieldname": "acknowledgment_status",
+      "fieldtype": "Select",
+      "label": "Acknowledgment Status",
+      "options": "Pending\nAcknowledged\nResolved",
+      "default": "Pending"
+    }
+  ],
+  "idx": 0,
+  "is_submittable": 0,
+  "issingle": 0,
+  "istable": 0,
+  "modified": "2025-04-03 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Shopfloor",
+  "name": "MES Event Log",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Operator"
+    }
+  ]
+}
