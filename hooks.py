@@ -11,32 +11,6 @@ default_settings = {
 	"maxauto_custom-max-auto-setup": 1
 }
 
-# Installed modules as per manufacturing platform architecture
-modules = [
-	"Engineering",
-	"Manufacturing",
-	"Rope & Cable",
-	"CNC",
-	"Shopfloor",
-	"Inventory",
-	"Quality",
-	"Packing",
-	"Maxauto"
-]
-
-# Module Mappings
-module_map = [
-	"Engineering",
-	"Manufacturing", 
-	"Rope & Cable",
-	"CNC",
-	"Shopfloor",
-	"Inventory",
-	"Quality",
-	"Packing",
-	"Maxauto"
-]
-
 # Pages
 page_list = [
 	{
