@@ -33,8 +33,7 @@
     {
       "fieldname": "study_date",
       "fieldtype": "Date",
-      "label": "Study Date",
-      "default": "today"
+      "label": "Study Date"
     },
     {
       "fieldname": "machine_required",

@@ -45,8 +45,7 @@
     {
       "fieldname": "transfer_date",
       "fieldtype": "Date",
-      "label": "Transfer Date",
-      "default": "today"
+      "label": "Transfer Date"
     },
     {
       "fieldname": "transfer_status",

@@ -18,7 +18,6 @@
       "fieldname": "inspection_date",
       "fieldtype": "Date",
       "label": "Inspection Date",
-      "default": "today",
       "reqd": 1
     },
     {

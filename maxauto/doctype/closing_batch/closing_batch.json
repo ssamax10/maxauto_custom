@@ -1,28 +1,27 @@
 {
-  "autoname": "SB-.##-MM/DD/YY",
+  "autoname": "CB-.##-MM/DD/YY",
   "creation": "2025-04-03 00:00:00.000000",
   "custom": 0,
   "doctype": "DocType",
   "field_order": [
     "batch_date",
     "product_specification",
-    "stranding_machine",
-    "input_bobbins",
+    "closing_machine",
+    "input_strands",
     "total_input_qty_kg",
-    "output_strand_qty_kg",
+    "output_rope_qty_kg",
     "waste_qty_kg",
     "batch_status",
     "operator",
     "start_time",
     "end_time",
-    "notes"
+    "quality_notes"
   ],
   "fields": [
     {
       "fieldname": "batch_date",
       "fieldtype": "Date",
       "label": "Batch Date",
-      "default": "today",
       "reqd": 1
     },
     {
@@ -32,16 +31,16 @@
       "options": "Product Specification"
     },
     {
-      "fieldname": "stranding_machine",
+      "fieldname": "closing_machine",
       "fieldtype": "Link",
-      "label": "Stranding Machine",
+      "label": "Closing Machine",
       "options": "Machine"
     },
     {
-      "fieldname": "input_bobbins",
+      "fieldname": "input_strands",
       "fieldtype": "Table",
-      "label": "Input Bobbins",
-      "options": "Stranding Batch Bobbin"
+      "label": "Input Strands",
+      "options": "Closing Batch Input"
     },
     {
       "fieldname": "total_input_qty_kg",
@@ -50,9 +49,9 @@
       "read_only": 1
     },
     {
-      "fieldname": "output_strand_qty_kg",
+      "fieldname": "output_rope_qty_kg",
       "fieldtype": "Float",
-      "label": "Output Strand Qty (kg)"
+      "label": "Output Rope Qty (kg)"
     },
     {
       "fieldname": "waste_qty_kg",
@@ -83,9 +82,9 @@
       "label": "End Time"
     },
     {
-      "fieldname": "notes",
+      "fieldname": "quality_notes",
       "fieldtype": "Text",
-      "label": "Notes"
+      "label": "Quality Notes"
     }
   ],
   "idx": 0,
@@ -95,7 +94,7 @@
   "modified": "2025-04-03 00:00:00.000000",
   "modified_by": "Administrator",
   "module": "Maxauto",
-  "name": "Stranding Batch",
+  "name": "Closing Batch",
   "owner": "Administrator",
   "permissions": [
     {

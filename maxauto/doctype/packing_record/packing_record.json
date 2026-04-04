@@ -22,7 +22,6 @@
       "fieldname": "packing_date",
       "fieldtype": "Date",
       "label": "Packing Date",
-      "default": "today",
       "reqd": 1
     },
     {

@@ -28,39 +28,39 @@ page_list = [
 # Document Hooks
 doc_events = {
 	"Manufacturing Routing": {
-		"validate": "maxauto_custom.maxauto.manufacturing.doctypes.manufacturing_routing.manufacturing_routing.ManufacturingRouting.validate",
-		"on_submit": "maxauto_custom.maxauto.manufacturing.doctypes.manufacturing_routing.manufacturing_routing.ManufacturingRouting.on_submit"
+		"validate": "maxauto_custom.maxauto.doctype.manufacturing_routing.manufacturing_routing.ManufacturingRouting.validate",
+		"on_submit": "maxauto_custom.maxauto.doctype.manufacturing_routing.manufacturing_routing.ManufacturingRouting.on_submit"
 	},
 	"Machine": {
-		"validate": "maxauto_custom.maxauto.manufacturing.doctypes.machine.machine.Machine.validate"
+		"validate": "maxauto_custom.maxauto.doctype.machine.machine.Machine.validate"
 	},
 	"Rope Construction": {
-		"validate": "maxauto_custom.maxauto.rope_cable.doctypes.rope_construction.rope_construction.RopeConstruction.validate"
+		"validate": "maxauto_custom.maxauto.doctype.rope_construction.rope_construction.RopeConstruction.validate"
 	},
 	"Bobbin": {
-		"validate": "maxauto_custom.maxauto.rope_cable.doctypes.bobbin.bobbin.Bobbin.validate"
+		"validate": "maxauto_custom.maxauto.doctype.bobbin.bobbin.Bobbin.validate"
 	},
 	"Stranding Batch": {
-		"validate": "maxauto_custom.maxauto.rope_cable.doctypes.stranding_batch.stranding_batch.StrandingBatch.validate",
-		"on_submit": "maxauto_custom.maxauto.rope_cable.doctypes.stranding_batch.stranding_batch.StrandingBatch.on_submit"
+		"validate": "maxauto_custom.maxauto.doctype.stranding_batch.stranding_batch.StrandingBatch.validate",
+		"on_submit": "maxauto_custom.maxauto.doctype.stranding_batch.stranding_batch.StrandingBatch.on_submit"
 	},
 	"Closing Batch": {
-		"validate": "maxauto_custom.maxauto.rope_cable.doctypes.closing_batch.closing_batch.ClosingBatch.validate",
-		"on_submit": "maxauto_custom.maxauto.rope_cable.doctypes.closing_batch.closing_batch.ClosingBatch.on_submit"
+		"validate": "maxauto_custom.maxauto.doctype.closing_batch.closing_batch.ClosingBatch.validate",
+		"on_submit": "maxauto_custom.maxauto.doctype.closing_batch.closing_batch.ClosingBatch.on_submit"
 	},
 	"Manufacturing Operation Execution": {
-		"validate": "maxauto_custom.maxauto.shopfloor.doctypes.manufacturing_operation_execution.manufacturing_operation_execution.ManufacturingOperationExecution.validate",
-		"on_submit": "maxauto_custom.maxauto.shopfloor.doctypes.manufacturing_operation_execution.manufacturing_operation_execution.ManufacturingOperationExecution.on_submit"
+		"validate": "maxauto_custom.maxauto.doctype.manufacturing_operation_execution.manufacturing_operation_execution.ManufacturingOperationExecution.validate",
+		"on_submit": "maxauto_custom.maxauto.doctype.manufacturing_operation_execution.manufacturing_operation_execution.ManufacturingOperationExecution.on_submit"
 	},
 	"Unit WIP Transfer": {
-		"validate": "maxauto_custom.maxauto.inventory.doctypes.unit_wip_transfer.unit_wip_transfer.UnitWIPTransfer.validate",
-		"on_submit": "maxauto_custom.maxauto.inventory.doctypes.unit_wip_transfer.unit_wip_transfer.UnitWIPTransfer.on_submit"
+		"validate": "maxauto_custom.maxauto.doctype.unit_wip_transfer.unit_wip_transfer.UnitWIPTransfer.validate",
+		"on_submit": "maxauto_custom.maxauto.doctype.unit_wip_transfer.unit_wip_transfer.UnitWIPTransfer.on_submit"
 	},
 	"Inspection Record": {
-		"validate": "maxauto_custom.maxauto.quality.doctypes.inspection_record.inspection_record.InspectionRecord.validate"
+		"validate": "maxauto_custom.maxauto.doctype.inspection_record.inspection_record.InspectionRecord.validate"
 	},
 	"Packing Record": {
-		"validate": "maxauto_custom.maxauto.packing.doctypes.packing_record.packing_record.PackingRecord.validate"
+		"validate": "maxauto_custom.maxauto.doctype.packing_record.packing_record.PackingRecord.validate"
 	}
 }
 

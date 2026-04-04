@@ -64,8 +64,7 @@
     {
       "fieldname": "axis",
       "fieldtype": "Int",
-      "label": "Axis (for CNC)",
-      "example": 3, 5
+      "label": "Axis (for CNC)"
     },
     {
       "fieldname": "spindle_rpm",
