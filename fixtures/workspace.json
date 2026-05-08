@@ -1,0 +1,33 @@
+[
+ {
+  "app": "maxauto_custom",
+  "charts": [],
+  "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Masters\", \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Machine\", \"label\": \"Machine\", \"color\": \"#2490EF\", \"icon\": \"fa fa-cog\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Machine Capability\", \"label\": \"Machine Capability\", \"color\": \"#2490EF\", \"icon\": \"fa fa-cog\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Bobbin\", \"label\": \"Bobbin\", \"color\": \"#2490EF\", \"icon\": \"fa fa-circle\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Rope Construction\", \"label\": \"Rope Construction\", \"color\": \"#2490EF\", \"icon\": \"fa fa-th\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Product Specification\", \"label\": \"Product Specification\", \"color\": \"#2490EF\", \"icon\": \"fa fa-file-text\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Manufacturing Routing\", \"label\": \"Manufacturing Routing\", \"color\": \"#2490EF\", \"icon\": \"fa fa-sitemap\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Manufacturing Operation Type\", \"label\": \"Operation Type\", \"color\": \"#2490EF\", \"icon\": \"fa fa-wrench\", \"col\": 3}}, {\"type\": \"header\", \"data\": {\"text\": \"Production\", \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Stranding Batch\", \"label\": \"Stranding Batch\", \"color\": \"#28a745\", \"icon\": \"fa fa-industry\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Closing Batch\", \"label\": \"Closing Batch\", \"color\": \"#28a745\", \"icon\": \"fa fa-industry\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Manufacturing Operation Execution\", \"label\": \"Operation Execution\", \"color\": \"#28a745\", \"icon\": \"fa fa-play\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Unit WIP Transfer\", \"label\": \"Unit WIP Transfer\", \"color\": \"#28a745\", \"icon\": \"fa fa-exchange\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Packing Record\", \"label\": \"Packing Record\", \"color\": \"#28a745\", \"icon\": \"fa fa-box\", \"col\": 3}}, {\"type\": \"header\", \"data\": {\"text\": \"Quality & Engineering\", \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Inspection Record\", \"label\": \"Inspection Record\", \"color\": \"#f39c12\", \"icon\": \"fa fa-check-circle\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Feasibility Study\", \"label\": \"Feasibility Study\", \"color\": \"#f39c12\", \"icon\": \"fa fa-search\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"Engineering Project\", \"label\": \"Engineering Project\", \"color\": \"#f39c12\", \"icon\": \"fa fa-project-diagram\", \"col\": 3}}, {\"type\": \"header\", \"data\": {\"text\": \"Logs\", \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_type\": \"DocType\", \"link_to\": \"MES Event Log\", \"label\": \"MES Event Log\", \"color\": \"#6c757d\", \"icon\": \"fa fa-list\", \"col\": 3}}]",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "external_link": null,
+  "for_user": null,
+  "hide_custom": 0,
+  "icon": "fa fa-industry",
+  "indicator_color": "green",
+  "is_hidden": 0,
+  "label": "Maxauto",
+  "link_to": null,
+  "link_type": "DocType",
+  "links": [],
+  "modified": "2026-05-08 17:09:34.414471",
+  "module": "maxauto",
+  "name": "Maxauto",
+  "number_cards": [],
+  "parent_page": null,
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [],
+  "sequence_id": 0.0,
+  "shortcuts": [],
+  "title": "Maxauto",
+  "type": "Workspace"
+ }
+]

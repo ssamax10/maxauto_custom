@@ -65,7 +65,13 @@ doc_events = {
 }
 
 # Fixtures to load
-fixtures = []
+# Keep the Maxauto Workspace portable across new site installs.
+fixtures = [
+	{
+		"dt": "Workspace",
+		"filters": [["name", "in", ["Maxauto"]]],
+	}
+]
 
 # Desk
 # Note: Desk menu items are added via Workspace shortcuts, not hooks
