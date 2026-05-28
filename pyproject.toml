@@ -19,54 +19,23 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-dependencies = [
-    "frappe",
-]
+dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/ssamax10/maxauto_custom"
 
 [tool.setuptools]
-packages = [
-    "maxauto_custom",
-    "maxauto",
-    "maxauto.page",
-    "maxauto.page.asset_label_sheet",
-    "maxauto.engineering",
-    "maxauto.manufacturing",
-    "maxauto.rope_cable",
-    "maxauto.cnc",
-    "maxauto.shopfloor",
-    "maxauto.inventory",
-    "maxauto.quality",
-    "maxauto.packing",
-    "maxauto.mes",
-    "maxauto.doctype",
-    "maxauto.doctype.engineering_project",
-    "maxauto.doctype.engineering_project_link",
-    "maxauto.doctype.feasibility_study",
-    "maxauto.doctype.product_specification",
-    "maxauto.doctype.machine",
-    "maxauto.doctype.machine_capability",
-    "maxauto.doctype.manufacturing_routing",
-    "maxauto.doctype.manufacturing_operation_type",
-    "maxauto.doctype.manufacturing_routing_operation",
-    "maxauto.doctype.rope_construction",
-    "maxauto.doctype.bobbin",
-    "maxauto.doctype.stranding_batch",
-    "maxauto.doctype.closing_batch",
-    "maxauto.doctype.stranding_batch_bobbin",
-    "maxauto.doctype.closing_batch_input",
-    "maxauto.doctype.manufacturing_operation_execution",
-    "maxauto.doctype.mes_event_log",
-    "maxauto.doctype.unit_wip_transfer",
-    "maxauto.doctype.inspection_record",
-    "maxauto.doctype.inspection_test_result",
-    "maxauto.doctype.packing_record",
-]
+include-package-data = true
+
+[tool.setuptools.package-dir]
+maxauto_custom = "."
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["maxauto_custom", "maxauto_custom.*"]
 
 [tool.setuptools.package-data]
-maxauto = ["doctype/*/*.json", "doctype/*/*.js", "doctype/*/*.html"]
+"maxauto_custom.maxauto" = ["doctype/*/*.json", "doctype/*/*.js", "doctype/*/*.html", "page/*/*.json", "page/*/*.js", "page/*/*.html"]
 
 [tool.bench]
 app-dependencies = [
