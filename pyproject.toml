@@ -27,15 +27,12 @@ Homepage = "https://github.com/ssamax10/maxauto_custom"
 [tool.setuptools]
 include-package-data = true
 
-[tool.setuptools.package-dir]
-maxauto_custom = "."
-
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["maxauto_custom", "maxauto_custom.*"]
+include = ["maxauto_custom", "maxauto_custom.*", "maxauto", "maxauto.*", "commands", "commands.*"]
 
 [tool.setuptools.package-data]
-"maxauto_custom.maxauto" = ["doctype/*/*.json", "doctype/*/*.js", "doctype/*/*.html", "page/*/*.json", "page/*/*.js", "page/*/*.html"]
+maxauto = ["doctype/*/*.json", "doctype/*/*.js", "doctype/*/*.html", "page/*/*.json", "page/*/*.js", "page/*/*.html"]
 
 [tool.bench]
 app-dependencies = [
