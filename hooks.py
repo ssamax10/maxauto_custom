@@ -4,7 +4,7 @@ app_publisher = "Max Auto Cables Pvt Ltd"
 app_description = "MaxAuto Manufacturing Platform - Comprehensive ERP solution for rope/cable manufacturing, CNC machining, and multi-unit operations"
 app_email = "info@maxautocables.com"
 app_license = "MIT"
-app_version = "1.0.0"
+app_version = "1.1.0"
 
 # Modules
 default_settings = {
@@ -61,16 +61,63 @@ doc_events = {
 	},
 	"Packing Record": {
 		"validate": "maxauto_custom.maxauto.doctype.packing_record.packing_record.PackingRecord.validate"
+	},
+	"Plant": {
+		"validate": "maxauto_custom.maxauto.plant.doctype.plant.plant.Plant.validate"
 	}
 }
 
-# Fixtures to load
-# Keep the Maxauto Workspace portable across new site installs.
+# Fixtures to load - Version controlled customizations
+# Export with: bench --site <site> export-fixtures --app maxauto_custom
 fixtures = [
+	# Workspace
 	{
 		"dt": "Workspace",
 		"filters": [["name", "in", ["Maxauto"]]],
-	}
+	},
+	# Custom Fields
+	{
+		"dt": "Custom Field",
+		"filters": [["module", "=", "Maxauto"]],
+	},
+	# Property Setters
+	{
+		"dt": "Property Setter",
+		"filters": [["module", "=", "Maxauto"]],
+	},
+	# Client Scripts
+	{
+		"dt": "Client Script",
+		"filters": [["module", "=", "Maxauto"]],
+	},
+	# Server Scripts
+	{
+		"dt": "Server Script",
+		"filters": [["module", "=", "Maxauto"]],
+	},
+	# Print Formats
+	{
+		"dt": "Print Format",
+		"filters": [["module", "=", "Maxauto"]],
+	},
+	# Workflows
+	{
+		"dt": "Workflow",
+		"filters": [["module", "=", "Maxauto"]],
+	},
+	{
+		"dt": "Workflow State",
+		"filters": [["module", "=", "Maxauto"]],
+	},
+	{
+		"dt": "Workflow Action Master",
+		"filters": [["module", "=", "Maxauto"]],
+	},
+	# Notifications
+	{
+		"dt": "Notification",
+		"filters": [["module", "=", "Maxauto"]],
+	},
 ]
 
 # Desk

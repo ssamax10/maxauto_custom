@@ -1,0 +1,293 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:MS-{material_code}-{####}",
+ "creation": "2025-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "material_code",
+  "material_name",
+  "item",
+  "column_break_1",
+  "is_active",
+  "specification_section",
+  "material_type",
+  "grade",
+  "standard",
+  "column_break_2",
+  "density",
+  "tensile_strength",
+  "yield_strength",
+  "dimensions_section",
+  "diameter_mm",
+  "thickness_mm",
+  "width_mm",
+  "column_break_3",
+  "length_mm",
+  "tolerance",
+  "chemical_composition_section",
+  "carbon",
+  "manganese",
+  "silicon",
+  "column_break_4",
+  "phosphorus",
+  "sulfur",
+  "other_elements",
+  "certification_section",
+  "mill_certificate_required",
+  "test_certificate_required",
+  "column_break_5",
+  "certificate_number",
+  "certificate_date",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "material_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Material Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "material_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Material Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "specification_section",
+   "fieldtype": "Section Break",
+   "label": "Specification"
+  },
+  {
+   "fieldname": "material_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Material Type",
+   "options": "\nSteel\nStainless Steel\nAluminum\nCopper\nBrass\nBronze\nPlastic\nRubber\nOther"
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Data",
+   "label": "Grade"
+  },
+  {
+   "fieldname": "standard",
+   "fieldtype": "Data",
+   "label": "Standard (ASTM/IS/DIN)"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "density",
+   "fieldtype": "Float",
+   "label": "Density (g/cm³)"
+  },
+  {
+   "fieldname": "tensile_strength",
+   "fieldtype": "Float",
+   "label": "Tensile Strength (MPa)"
+  },
+  {
+   "fieldname": "yield_strength",
+   "fieldtype": "Float",
+   "label": "Yield Strength (MPa)"
+  },
+  {
+   "fieldname": "dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Dimensions"
+  },
+  {
+   "fieldname": "diameter_mm",
+   "fieldtype": "Float",
+   "label": "Diameter (mm)"
+  },
+  {
+   "fieldname": "thickness_mm",
+   "fieldtype": "Float",
+   "label": "Thickness (mm)"
+  },
+  {
+   "fieldname": "width_mm",
+   "fieldtype": "Float",
+   "label": "Width (mm)"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "length_mm",
+   "fieldtype": "Float",
+   "label": "Length (mm)"
+  },
+  {
+   "fieldname": "tolerance",
+   "fieldtype": "Data",
+   "label": "Tolerance"
+  },
+  {
+   "fieldname": "chemical_composition_section",
+   "fieldtype": "Section Break",
+   "label": "Chemical Composition (%)"
+  },
+  {
+   "fieldname": "carbon",
+   "fieldtype": "Float",
+   "label": "Carbon (C)"
+  },
+  {
+   "fieldname": "manganese",
+   "fieldtype": "Float",
+   "label": "Manganese (Mn)"
+  },
+  {
+   "fieldname": "silicon",
+   "fieldtype": "Float",
+   "label": "Silicon (Si)"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phosphorus",
+   "fieldtype": "Float",
+   "label": "Phosphorus (P)"
+  },
+  {
+   "fieldname": "sulfur",
+   "fieldtype": "Float",
+   "label": "Sulfur (S)"
+  },
+  {
+   "fieldname": "other_elements",
+   "fieldtype": "Small Text",
+   "label": "Other Elements"
+  },
+  {
+   "fieldname": "certification_section",
+   "fieldtype": "Section Break",
+   "label": "Certification"
+  },
+  {
+   "default": "0",
+   "fieldname": "mill_certificate_required",
+   "fieldtype": "Check",
+   "label": "Mill Certificate Required"
+  },
+  {
+   "default": "0",
+   "fieldname": "test_certificate_required",
+   "fieldtype": "Check",
+   "label": "Test Certificate Required"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "certificate_number",
+   "fieldtype": "Data",
+   "label": "Certificate Number"
+  },
+  {
+   "fieldname": "certificate_date",
+   "fieldtype": "Date",
+   "label": "Certificate Date"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Maxauto",
+ "name": "Material Specification",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Quality Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1
+  }
+ ],
+ "search_fields": "material_code,material_name,item,material_type",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

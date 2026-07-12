@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "maxauto_custom"
-version = "1.0.0"
+version = "1.1.0"
 authors = [
     {name = "Max Auto Cables Pvt Ltd", email = "info@maxautocables.com"},
 ]
@@ -29,10 +29,39 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["maxauto_custom", "maxauto_custom.*", "maxauto", "maxauto.*", "commands", "commands.*"]
+include = [
+    "maxauto_custom",
+    "maxauto_custom.*",
+    "maxauto",
+    "maxauto.*",
+    "commands",
+    "commands.*"
+]
 
 [tool.setuptools.package-data]
-maxauto = ["doctype/*/*.json", "doctype/*/*.js", "doctype/*/*.html", "page/*/*.json", "page/*/*.js", "page/*/*.html"]
+maxauto = [
+    "doctype/*/*.json",
+    "doctype/*/*.js",
+    "doctype/*/*.html",
+    "plant/doctype/*/*.json",
+    "plant/doctype/*/*.js",
+    "plant/doctype/*/*.html",
+    "material/doctype/*/*.json",
+    "material/doctype/*/*.js",
+    "material/doctype/*/*.html",
+    "purchasing/doctype/*/*.json",
+    "purchasing/doctype/*/*.js",
+    "purchasing/doctype/*/*.html",
+    "report/report/*/*.json",
+    "report/report/*/*.js",
+    "report/report/*/*.py",
+    "print_format/print_format/*/*.json",
+    "print_format/print_format/*/*.html",
+    "workflow/workflow/*/*.json",
+    "page/*/*.json",
+    "page/*/*.js",
+    "page/*/*.html"
+]
 
 [tool.bench]
 app-dependencies = [

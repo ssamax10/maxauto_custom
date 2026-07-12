@@ -1,0 +1,191 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:plant_code",
+ "creation": "2025-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "plant_code",
+  "plant_name",
+  "business_unit",
+  "column_break_1",
+  "is_active",
+  "address_section",
+  "address",
+  "warehouse_section",
+  "default_rm_warehouse",
+  "default_inqa_warehouse",
+  "column_break_2",
+  "default_fg_warehouse",
+  "default_cost_center",
+  "contact_section",
+  "purchase_contact",
+  "qa_contact",
+  "column_break_3",
+  "stores_contact",
+  "phone",
+  "email"
+ ],
+ "fields": [
+  {
+   "fieldname": "plant_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Plant Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "plant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Plant Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "business_unit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Business Unit"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "warehouse_section",
+   "fieldtype": "Section Break",
+   "label": "Default Warehouses"
+  },
+  {
+   "fieldname": "default_rm_warehouse",
+   "fieldtype": "Link",
+   "label": "Default RM Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "default_inqa_warehouse",
+   "fieldtype": "Link",
+   "label": "Default INQA Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_fg_warehouse",
+   "fieldtype": "Link",
+   "label": "Default FG Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "default_cost_center",
+   "fieldtype": "Link",
+   "label": "Default Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "purchase_contact",
+   "fieldtype": "Data",
+   "label": "Purchase Contact"
+  },
+  {
+   "fieldname": "qa_contact",
+   "fieldtype": "Data",
+   "label": "QA Contact"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stores_contact",
+   "fieldtype": "Data",
+   "label": "Stores Contact"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Maxauto",
+ "name": "Plant",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

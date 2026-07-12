@@ -1,0 +1,301 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SA-{supplier}-{####}",
+ "creation": "2025-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "supplier",
+  "supplier_name",
+  "column_break_1",
+  "approval_status",
+  "approval_date",
+  "approved_by",
+  "supplier_details_section",
+  "supplier_type",
+  "contact_person",
+  "email",
+  "column_break_2",
+  "phone",
+  "address",
+  "certification_section",
+  "iso_certified",
+  "iso_certificate_number",
+  "column_break_3",
+  "certificate_valid_until",
+  "audit_section",
+  "last_audit_date",
+  "audit_score",
+  "column_break_4",
+  "next_audit_date",
+  "audit_findings",
+  "quality_section",
+  "quality_agreement_signed",
+  "quality_manual_received",
+  "column_break_5",
+  "incoming_inspection_required",
+  "approved_materials_section",
+  "approved_materials",
+  "notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Supplier",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "supplier.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Supplier Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Approval Status",
+   "options": "Pending\nApproved\nConditionally Approved\nRejected\nExpired",
+   "reqd": 1
+  },
+  {
+   "fieldname": "approval_date",
+   "fieldtype": "Date",
+   "label": "Approval Date"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User"
+  },
+  {
+   "fieldname": "supplier_details_section",
+   "fieldtype": "Section Break",
+   "label": "Supplier Details"
+  },
+  {
+   "fieldname": "supplier_type",
+   "fieldtype": "Select",
+   "label": "Supplier Type",
+   "options": "\nRaw Material\nComponent\nService\nSubcontractor\nEquipment"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "certification_section",
+   "fieldtype": "Section Break",
+   "label": "Certification"
+  },
+  {
+   "default": "0",
+   "fieldname": "iso_certified",
+   "fieldtype": "Check",
+   "label": "ISO Certified"
+  },
+  {
+   "fieldname": "iso_certificate_number",
+   "fieldtype": "Data",
+   "label": "ISO Certificate Number"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "certificate_valid_until",
+   "fieldtype": "Date",
+   "label": "Certificate Valid Until"
+  },
+  {
+   "fieldname": "audit_section",
+   "fieldtype": "Section Break",
+   "label": "Audit Information"
+  },
+  {
+   "fieldname": "last_audit_date",
+   "fieldtype": "Date",
+   "label": "Last Audit Date"
+  },
+  {
+   "fieldname": "audit_score",
+   "fieldtype": "Rating",
+   "label": "Audit Score"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "next_audit_date",
+   "fieldtype": "Date",
+   "label": "Next Audit Date"
+  },
+  {
+   "fieldname": "audit_findings",
+   "fieldtype": "Text Editor",
+   "label": "Audit Findings"
+  },
+  {
+   "fieldname": "quality_section",
+   "fieldtype": "Section Break",
+   "label": "Quality Requirements"
+  },
+  {
+   "default": "0",
+   "fieldname": "quality_agreement_signed",
+   "fieldtype": "Check",
+   "label": "Quality Agreement Signed"
+  },
+  {
+   "default": "0",
+   "fieldname": "quality_manual_received",
+   "fieldtype": "Check",
+   "label": "Quality Manual Received"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "incoming_inspection_required",
+   "fieldtype": "Check",
+   "label": "Incoming Inspection Required"
+  },
+  {
+   "fieldname": "approved_materials_section",
+   "fieldtype": "Section Break",
+   "label": "Approved Materials"
+  },
+  {
+   "fieldname": "approved_materials",
+   "fieldtype": "Table",
+   "label": "Approved Materials",
+   "options": "Supplier Approved Material"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Supplier Approval",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Maxauto",
+ "name": "Supplier Approval",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Quality Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase User",
+   "share": 1
+  }
+ ],
+ "search_fields": "supplier,supplier_name,approval_status",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
