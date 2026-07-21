@@ -11,7 +11,7 @@ packages = find_packages(include=[
 
 setup(
     name="maxauto_custom",
-    version="1.0.0",
+    version="1.1.1",
     description="MaxAuto customizations for ERPNext",
     author="Max Auto Cables Pvt Ltd",
     packages=packages,

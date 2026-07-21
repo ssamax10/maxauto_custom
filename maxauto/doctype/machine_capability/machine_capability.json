@@ -44,6 +44,16 @@
       "read": 1,
       "role": "System Manager",
       "write": 1
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "role": "Manufacturing Manager",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Manufacturing User"
     }
   ]
 }

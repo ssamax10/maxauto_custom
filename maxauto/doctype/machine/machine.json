@@ -16,7 +16,8 @@
     "table_size",
     "installation_date",
     "status",
-    "maintenance_due_date"
+    "maintenance_due_date",
+    "amended_from"
   ],
   "fields": [
     {
@@ -93,6 +94,15 @@
       "fieldname": "maintenance_due_date",
       "fieldtype": "Date",
       "label": "Next Maintenance Due"
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "no_copy": 1,
+      "options": "Machine",
+      "print_hide": 1,
+      "read_only": 1
     }
   ],
   "idx": 0,
@@ -104,13 +114,32 @@
   "module": "Maxauto",
   "name": "Machine",
   "owner": "Administrator",
+  "engine": "InnoDB",
+  "naming_rule": "Naming series",
   "permissions": [
     {
+      "amend": 1,
+      "cancel": 1,
       "create": 1,
+      "delete": 1,
       "read": 1,
       "role": "System Manager",
       "submit": 1,
       "write": 1
+    },
+    {
+      "amend": 1,
+      "cancel": 1,
+      "create": 1,
+      "delete": 1,
+      "read": 1,
+      "role": "Manufacturing Manager",
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Manufacturing User"
     }
   ]
 }

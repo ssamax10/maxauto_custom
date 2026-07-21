@@ -1,0 +1,104 @@
+{
+  "actions": [],
+  "creation": "2025-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "material_specification",
+    "item",
+    "material_code",
+    "material_name",
+    "grade",
+    "specification",
+    "column_break_1",
+    "approval_status",
+    "valid_from",
+    "valid_until",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "material_specification",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Material Specification",
+      "options": "Material Specification"
+    },
+    {
+      "fieldname": "item",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Item",
+      "options": "Item"
+    },
+    {
+      "fetch_from": "material_specification.material_code",
+      "fieldname": "material_code",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Material Code",
+      "read_only": 1
+    },
+    {
+      "fetch_from": "material_specification.material_name",
+      "fieldname": "material_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Material Name",
+      "read_only": 1
+    },
+    {
+      "fetch_from": "material_specification.grade",
+      "fieldname": "grade",
+      "fieldtype": "Data",
+      "label": "Grade",
+      "read_only": 1
+    },
+    {
+      "fieldname": "specification",
+      "fieldtype": "Data",
+      "label": "Specification"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "Approved",
+      "fieldname": "approval_status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Approval Status",
+      "options": "\nApproved\nPending\nRejected"
+    },
+    {
+      "fieldname": "valid_from",
+      "fieldtype": "Date",
+      "label": "Valid From"
+    },
+    {
+      "fieldname": "valid_until",
+      "fieldtype": "Date",
+      "label": "Valid Until"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "istable": 1,
+  "links": [],
+  "modified": "2025-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Maxauto",
+  "name": "Supplier Approved Material",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

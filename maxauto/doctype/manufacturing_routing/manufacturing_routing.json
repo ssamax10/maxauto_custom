@@ -10,7 +10,8 @@
     "total_operations",
     "routing_operations",
     "version",
-    "is_active"
+    "is_active",
+    "amended_from"
   ],
   "fields": [
     {
@@ -49,6 +50,15 @@
       "fieldtype": "Check",
       "label": "Is Active",
       "default": 1
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "no_copy": 1,
+      "options": "Manufacturing Routing",
+      "print_hide": 1,
+      "read_only": 1
     }
   ],
   "idx": 0,
@@ -60,13 +70,32 @@
   "module": "Maxauto",
   "name": "Manufacturing Routing",
   "owner": "Administrator",
+  "engine": "InnoDB",
+  "naming_rule": "Naming series",
   "permissions": [
     {
+      "amend": 1,
+      "cancel": 1,
       "create": 1,
+      "delete": 1,
       "read": 1,
       "role": "System Manager",
       "submit": 1,
       "write": 1
+    },
+    {
+      "amend": 1,
+      "cancel": 1,
+      "create": 1,
+      "delete": 1,
+      "read": 1,
+      "role": "Manufacturing Manager",
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Manufacturing User"
     }
   ]
 }

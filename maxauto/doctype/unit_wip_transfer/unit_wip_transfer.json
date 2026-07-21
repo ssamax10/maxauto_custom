@@ -3,6 +3,7 @@
   "creation": "2025-04-03 00:00:00.000000",
   "custom": 0,
   "doctype": "DocType",
+  "engine": "InnoDB",
   "field_order": [
     "source_warehouse",
     "target_warehouse",
@@ -12,6 +13,8 @@
     "transfer_status",
     "reference_doctype",
     "reference_docname",
+    "stock_entry",
+    "amended_from",
     "notes"
   ],
   "fields": [
@@ -65,6 +68,22 @@
       "label": "Reference DocName"
     },
     {
+      "fieldname": "stock_entry",
+      "fieldtype": "Link",
+      "label": "Stock Entry",
+      "options": "Stock Entry",
+      "read_only": 1
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "no_copy": 1,
+      "options": "Unit WIP Transfer",
+      "print_hide": 1,
+      "read_only": 1
+    },
+    {
       "fieldname": "notes",
       "fieldtype": "Text",
       "label": "Notes"
@@ -78,17 +97,24 @@
   "modified_by": "Administrator",
   "module": "Maxauto",
   "name": "Unit WIP Transfer",
+  "naming_rule": "Naming series",
   "owner": "Administrator",
   "permissions": [
     {
+      "amend": 1,
+      "cancel": 1,
       "create": 1,
+      "delete": 1,
       "read": 1,
       "role": "System Manager",
       "submit": 1,
       "write": 1
     },
     {
+      "amend": 1,
+      "cancel": 1,
       "create": 1,
+      "delete": 1,
       "read": 1,
       "role": "Warehouse Manager",
       "submit": 1,

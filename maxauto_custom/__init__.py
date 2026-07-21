@@ -1,4 +1,4 @@
-__version__ = "1.0.0"
+__version__ = "1.1.1"
 
 # Bridge package for legacy package layout where business modules live under
 # the top-level `maxauto` package while Frappe app name is `maxauto_custom`.

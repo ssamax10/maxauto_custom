@@ -2,29 +2,36 @@
 # License: MIT
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
-from datetime import datetime
 
 
 class ManufacturingOperationExecution(Document):
 	"""MES - Manufacturing Operation Execution tracking"""
-	
+
 	def validate(self):
 		"""Validate execution data"""
 		if not self.start_time:
 			self.start_time = frappe.utils.now_datetime()
-		
+
 		if self.end_time and self.start_time:
 			duration = (self.end_time - self.start_time).total_seconds() / 60
 			if duration < 0:
-				frappe.throw("End time must be after start time")
-		
+				frappe.throw(_("End time must be after start time"))
+
+		if self.actual_qty is None:
+			frappe.throw(_("Actual quantity is required"))
 		if self.actual_qty < 0:
-			frappe.throw("Actual quantity cannot be negative")
-		
+			frappe.throw(_("Actual quantity cannot be negative"))
+
+		if self.rejected_qty is None:
+			self.rejected_qty = 0
 		if self.rejected_qty < 0:
-			frappe.throw("Rejected quantity cannot be negative")
-	
+			frappe.throw(_("Rejected quantity cannot be negative"))
+
+		if self.rejected_qty > self.actual_qty:
+			frappe.throw(_("Rejected quantity cannot exceed actual quantity"))
+
 	def on_submit(self):
 		"""Log operation completion"""
 		# Create MES event log

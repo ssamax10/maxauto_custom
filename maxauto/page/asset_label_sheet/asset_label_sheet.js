@@ -354,7 +354,7 @@ frappe.pages['asset-label-sheet'].on_page_load = function (wrapper) {
                 </div>
             `;
 
-            const contactText = 'If found, Please contact : +91 9845903187';
+            const contactText = 'If found, Please contact : ' + (frappe.boot?.sysdefaults?.company_phone || frappe.defaults.get_default('company_phone') || '+91 9845903187');
             const footer = label.querySelector('.label-footer');
             footer.innerHTML = `
                 <div class="contact-text">${frappe.utils.escape_html(contactText)}</div>

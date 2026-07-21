@@ -1,0 +1,180 @@
+# Copyright (c) 2025, Max Auto Cables Pvt Ltd
+# License: MIT
+
+import frappe
+from frappe import _
+
+
+def execute(filters=None):
+	"""Plant-wise Purchase Order report.
+
+	Resolves the Plant for each PO item by matching the item's warehouse
+	(or the PO's set_warehouse) against Plant.default_rm_warehouse /
+	default_inqa_warehouse / default_fg_warehouse.
+	"""
+	if not filters:
+		filters = frappe._dict()
+
+	columns = get_columns()
+	data = get_data(filters)
+
+	return columns, data
+
+
+def get_columns():
+	return [
+		{
+			"label": _("Plant"),
+			"fieldname": "plant",
+			"fieldtype": "Link",
+			"options": "Plant",
+			"width": 120,
+		},
+		{
+			"label": _("PO No"),
+			"fieldname": "po_no",
+			"fieldtype": "Link",
+			"options": "Purchase Order",
+			"width": 140,
+		},
+		{
+			"label": _("PO Date"),
+			"fieldname": "po_date",
+			"fieldtype": "Date",
+			"width": 100,
+		},
+		{
+			"label": _("Supplier"),
+			"fieldname": "supplier",
+			"fieldtype": "Link",
+			"options": "Supplier",
+			"width": 160,
+		},
+		{
+			"label": _("Item"),
+			"fieldname": "item_code",
+			"fieldtype": "Link",
+			"options": "Item",
+			"width": 160,
+		},
+		{
+			"label": _("Qty"),
+			"fieldname": "qty",
+			"fieldtype": "Float",
+			"width": 90,
+		},
+		{
+			"label": _("UOM"),
+			"fieldname": "uom",
+			"fieldtype": "Link",
+			"options": "UOM",
+			"width": 80,
+		},
+		{
+			"label": _("Rate"),
+			"fieldname": "rate",
+			"fieldtype": "Currency",
+			"width": 110,
+		},
+		{
+			"label": _("Amount"),
+			"fieldname": "amount",
+			"fieldtype": "Currency",
+			"width": 120,
+		},
+		{
+			"label": _("Warehouse"),
+			"fieldname": "warehouse",
+			"fieldtype": "Link",
+			"options": "Warehouse",
+			"width": 140,
+		},
+		{
+			"label": _("Status"),
+			"fieldname": "status",
+			"fieldtype": "Data",
+			"width": 110,
+		},
+	]
+
+
+def get_data(filters):
+	conditions = ["po.docstatus < 2"]
+
+	if filters.get("from_date"):
+		conditions.append("po.transaction_date >= %(from_date)s")
+	if filters.get("to_date"):
+		conditions.append("po.transaction_date <= %(to_date)s")
+	if filters.get("supplier"):
+		conditions.append("po.supplier = %(supplier)s")
+	if filters.get("status"):
+		conditions.append("po.status = %(status)s")
+
+	where_clause = " AND ".join(conditions)
+
+	# Build plant-warehouse map once
+	plant_map = {}
+	for p in frappe.get_all(
+		"Plant",
+		fields=["name", "plant_name", "default_rm_warehouse", "default_inqa_warehouse", "default_fg_warehouse"],
+	):
+		for wh in (p.default_rm_warehouse, p.default_inqa_warehouse, p.default_fg_warehouse):
+			if wh:
+				plant_map[wh] = p.plant_name or p.name
+
+	# If a specific plant is selected, restrict warehouses to that plant
+	plant_warehouses = None
+	if filters.get("plant"):
+		pdoc = frappe.get_doc("Plant", filters.get("plant"))
+		plant_warehouses = {
+			w for w in (pdoc.default_rm_warehouse, pdoc.default_inqa_warehouse, pdoc.default_fg_warehouse) if w
+		}
+
+	rows = frappe.db.sql(
+		f"""
+		SELECT
+			po.name AS po_no,
+			po.transaction_date AS po_date,
+			po.supplier,
+			po.supplier_name,
+			po.status,
+			po.set_warehouse,
+			poi.item_code,
+			poi.qty,
+			poi.uom,
+			poi.rate,
+			poi.amount,
+			poi.warehouse
+		FROM `tabPurchase Order` po
+		INNER JOIN `tabPurchase Order Item` poi ON poi.parent = po.name
+		WHERE {where_clause}
+		ORDER BY po.transaction_date, po.name
+		""",
+		filters,
+		as_dict=True,
+	)
+
+	data = []
+	for r in rows:
+		wh = r.warehouse or r.set_warehouse
+		plant_name = plant_map.get(wh, "Unassigned") if wh else "Unassigned"
+
+		# Filter by plant if selected
+		if plant_warehouses and wh not in plant_warehouses:
+			continue
+
+		data.append({
+			"plant": plant_name,
+			"po_no": r.po_no,
+			"po_date": r.po_date,
+			"supplier": r.supplier,
+			"item_code": r.item_code,
+			"qty": r.qty,
+			"uom": r.uom,
+			"rate": r.rate,
+			"amount": r.amount,
+			"warehouse": wh,
+			"status": r.status,
+		})
+
+	return data

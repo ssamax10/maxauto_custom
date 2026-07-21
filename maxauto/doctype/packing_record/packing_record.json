@@ -3,6 +3,7 @@
   "creation": "2025-04-03 00:00:00.000000",
   "custom": 0,
   "doctype": "DocType",
+  "engine": "InnoDB",
   "field_order": [
     "packing_date",
     "product",
@@ -11,11 +12,18 @@
     "container_id",
     "container_weight_kg",
     "total_weight_kg",
+    "stock_entry",
+    "target_warehouse",
+    "source_warehouse",
+    "stock_movement_section",
+    "gross_weight_kg",
+    "net_weight_kg",
     "batch_number",
     "packing_status",
     "warehouse",
     "packed_by",
-    "notes"
+    "notes",
+    "amended_from"
   ],
   "fields": [
     {
@@ -87,6 +95,49 @@
       "fieldname": "notes",
       "fieldtype": "Text",
       "label": "Notes"
+    },
+    {
+      "fieldname": "net_weight_kg",
+      "fieldtype": "Float",
+      "label": "Net Weight (kg)"
+    },
+    {
+      "fieldname": "gross_weight_kg",
+      "fieldtype": "Float",
+      "label": "Gross Weight (kg)"
+    },
+    {
+      "fieldname": "stock_movement_section",
+      "fieldtype": "Section Break",
+      "label": "Stock Movement"
+    },
+    {
+      "fieldname": "source_warehouse",
+      "fieldtype": "Link",
+      "label": "Source Warehouse",
+      "options": "Warehouse"
+    },
+    {
+      "fieldname": "target_warehouse",
+      "fieldtype": "Link",
+      "label": "Target Warehouse",
+      "options": "Warehouse"
+    },
+    {
+      "fieldname": "stock_entry",
+      "fieldtype": "Link",
+      "label": "Stock Entry",
+      "options": "Stock Entry",
+      "read_only": 1
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "no_copy": 1,
+      "options": "Packing Record",
+      "print_hide": 1,
+      "read_only": 1
     }
   ],
   "idx": 0,
@@ -97,17 +148,24 @@
   "modified_by": "Administrator",
   "module": "Maxauto",
   "name": "Packing Record",
+  "naming_rule": "Naming series",
   "owner": "Administrator",
   "permissions": [
     {
+      "amend": 1,
+      "cancel": 1,
       "create": 1,
+      "delete": 1,
       "read": 1,
       "role": "System Manager",
       "submit": 1,
       "write": 1
     },
     {
+      "amend": 1,
+      "cancel": 1,
       "create": 1,
+      "delete": 1,
       "read": 1,
       "role": "Packing Manager",
       "submit": 1,

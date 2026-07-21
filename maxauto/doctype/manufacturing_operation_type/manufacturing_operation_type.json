@@ -3,6 +3,7 @@
   "creation": "2025-04-03 00:00:00.000000",
   "custom": 0,
   "doctype": "DocType",
+  "engine": "InnoDB",
   "field_order": [
     "operation_name",
     "operation_code",
@@ -12,7 +13,8 @@
     "cycle_time_minutes",
     "external_vendor",
     "vendor_name",
-    "is_inspection"
+    "is_inspection",
+    "amended_from"
   ],
   "fields": [
     {
@@ -70,6 +72,15 @@
       "fieldtype": "Check",
       "label": "Is Inspection Step",
       "default": 0
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "no_copy": 1,
+      "options": "Manufacturing Operation Type",
+      "print_hide": 1,
+      "read_only": 1
     }
   ],
   "idx": 0,
@@ -80,14 +91,32 @@
   "modified_by": "Administrator",
   "module": "Maxauto",
   "name": "Manufacturing Operation Type",
+  "naming_rule": "Naming series",
   "owner": "Administrator",
   "permissions": [
     {
+      "amend": 1,
+      "cancel": 1,
       "create": 1,
+      "delete": 1,
       "read": 1,
       "role": "System Manager",
       "submit": 1,
       "write": 1
+    },
+    {
+      "amend": 1,
+      "cancel": 1,
+      "create": 1,
+      "delete": 1,
+      "read": 1,
+      "role": "Manufacturing Manager",
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Manufacturing User"
     }
   ]
 }

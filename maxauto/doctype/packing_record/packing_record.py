@@ -31,7 +31,7 @@ class PackingRecord(Document):
 	
 	def on_submit(self):
 		"""Create stock entry to move packed goods to FG warehouse"""
-		if not self.item:
+		if not self.product:
 			frappe.throw(_("Item is required to create stock entry"))
 		
 		# Only create stock entry if source and target warehouses are set
@@ -50,13 +50,13 @@ class PackingRecord(Document):
 		stock_entry.to_warehouse = self.target_warehouse
 		
 		# Get item's stock UOM if available, otherwise default to Kg
-		item_uom = frappe.db.get_value("Item", self.item, "stock_uom") or "Kg"
+		item_uom = frappe.db.get_value("Item", self.product, "stock_uom") or "Kg"
 		
 		# Use total weight if available, otherwise use quantity
 		transfer_qty = self.total_weight_kg or self.quantity
 		
 		stock_entry.append("items", {
-			"item_code": self.item,
+			"item_code": self.product,
 			"qty": transfer_qty,
 			"uom": item_uom,
 			"transfer_qty": transfer_qty,

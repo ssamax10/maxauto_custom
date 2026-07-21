@@ -313,7 +313,7 @@ MIT License - See LICENSE file for details
 
 ## Version
 
-Current: 1.1.0
+Current: 1.1.1
 
 ### Changelog
 

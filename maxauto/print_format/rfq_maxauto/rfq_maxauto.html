@@ -1,0 +1,128 @@
+{% set company = frappe.get_doc("Company", doc.company) %}
+{% set company_logo = company.company_logo or "/assets/maxauto_custom/images/logo.svg" %}
+<div class="print-container">
+	<table class="table-header">
+		<tr>
+			<td class="logo-cell">
+				{% if company_logo %}<img src="{{ company_logo }}" class="company-logo" alt="logo">{% endif %}
+			</td>
+			<td class="company-info">
+				<h2>{{ company.company_name }}</h2>
+				{% if company.address_html %}<div>{{ company.address_html }}</div>{% endif %}
+				{% if company.phone_no %}<div>Phone: {{ company.phone_no }}</div>{% endif %}
+				{% if company.email %}<div>Email: {{ company.email }}</div>{% endif %}
+			</td>
+			<td class="doc-title-cell">
+				<h1>Request for Quotation</h1>
+				<div class="doc-meta">
+					<div><strong>RFQ No:</strong> {{ doc.name }}</div>
+					<div><strong>Date:</strong> {{ frappe.utils.formatdate(doc.transaction_date) }}</div>
+					{% if doc.valid_till %}<div><strong>Valid Till:</strong> {{ frappe.utils.formatdate(doc.valid_till) }}</div>{% endif %}
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<hr>
+
+	<table class="section-table">
+		<tr>
+			<td class="supplier-block">
+				<h4>To</h4>
+				<div>{{ doc.supplier_name or doc.supplier }}</div>
+				{% if doc.supplier_address %}<div>{{ doc.supplier_address_display or doc.supplier_address }}</div>{% endif %}
+			</td>
+			<td class="subject-block">
+				<h4>Subject</h4>
+				<div>Request for Quotation for supply of items as per the specifications below.</div>
+				{% if doc.terms %}<div class="terms">{{ doc.terms }}</div>{% endif %}
+			</td>
+		</tr>
+	</table>
+
+	<h4>Items</h4>
+	<table class="table table-bordered items-table">
+		<thead>
+			<tr>
+				<th style="width: 5%;">#</th>
+				<th style="width: 35%;">Item</th>
+				<th style="width: 12%;">Qty</th>
+				<th style="width: 10%;">UOM</th>
+				<th style="width: 15%;">Required By</th>
+				<th style="width: 23%;">Rate (to be quoted)</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in doc.items %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>
+					{{ item.item_code }} - {{ item.item_name }}
+					{% if item.description %}<div class="small text-muted">{{ item.description }}</div>{% endif %}
+				</td>
+				<td class="text-right">{{ item.qty }}</td>
+				<td>{{ item.uom or item.stock_uom }}</td>
+				<td>{{ frappe.utils.formatdate(item.schedule_date) if item.schedule_date else '' }}</td>
+				<td>&nbsp;</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<h4>Terms & Conditions</h4>
+	<div class="terms-content">
+		{% if doc.terms %}{{ doc.terms }}{% else %}
+		<ol>
+			<li>Quotations should be submitted on or before the valid-till date.</li>
+			<li>Prices should be inclusive of all applicable taxes; mention tax separately.</li>
+			<li>Delivery period and payment terms must be clearly stated.</li>
+			<li>Items must meet the specified quality and certification requirements.</li>
+		</ol>
+		{% endif %}
+	</div>
+
+	<table class="footer-table">
+		<tr>
+			<td class="signature-block">
+				<div>For {{ company.company_name }}</div>
+				<br><br><br>
+				<div>Authorized Signatory</div>
+			</td>
+			<td class="contact-block">
+				<div><strong>If found, please contact:</strong></div>
+				<div>{{ company.company_name }}</div>
+				{% if company.phone_no %}<div>{{ company.phone_no }}</div>{% endif %}
+			</td>
+		</tr>
+	</table>
+</div>
+
+<style>
+.print-container { font-family: Arial, sans-serif; font-size: 12px; color: #333; }
+.table-header { width: 100%; }
+.table-header td { vertical-align: top; }
+.logo-cell { width: 18%; }
+.company-logo { max-width: 120px; max-height: 60px; }
+.company-info { width: 42%; }
+.company-info h2 { margin: 0 0 4px 0; font-size: 16px; }
+.doc-title-cell { width: 40%; text-align: right; }
+.doc-title-cell h1 { margin: 0 0 6px 0; font-size: 20px; }
+.doc-meta { text-align: right; }
+.section-table { width: 100%; margin-top: 10px; }
+.section-table td { vertical-align: top; padding: 6px; }
+.supplier-block { width: 50%; }
+.subject-block { width: 50%; }
+h4 { margin: 14px 0 6px 0; font-size: 13px; }
+.items-table { width: 100%; border-collapse: collapse; }
+.items-table th, .items-table td { border: 1px solid #ccc; padding: 5px; }
+.items-table th { background: #f5f5f5; text-align: left; }
+.text-right { text-align: right; }
+.small { font-size: 10px; }
+.text-muted { color: #888; }
+.terms-content { margin-top: 4px; }
+.footer-table { width: 100%; margin-top: 30px; }
+.footer-table td { vertical-align: bottom; padding: 6px; }
+.signature-block { width: 60%; }
+.contact-block { width: 40%; }
+hr { border: none; border-top: 1px solid #ccc; margin: 10px 0; }
+</style>

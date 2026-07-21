@@ -3,6 +3,7 @@
   "creation": "2025-04-03 00:00:00.000000",
   "custom": 0,
   "doctype": "DocType",
+  "engine": "InnoDB",
   "field_order": [
     "batch_date",
     "product_specification",
@@ -15,7 +16,8 @@
     "operator",
     "start_time",
     "end_time",
-    "notes"
+    "notes",
+    "amended_from"
   ],
   "fields": [
     {
@@ -85,6 +87,15 @@
       "fieldname": "notes",
       "fieldtype": "Text",
       "label": "Notes"
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "no_copy": 1,
+      "options": "Stranding Batch",
+      "print_hide": 1,
+      "read_only": 1
     }
   ],
   "idx": 0,
@@ -95,16 +106,32 @@
   "modified_by": "Administrator",
   "module": "Maxauto",
   "name": "Stranding Batch",
+  "naming_rule": "Naming series",
   "owner": "Administrator",
   "permissions": [
     {
+      "amend": 1,
+      "cancel": 1,
       "create": 1,
+      "delete": 1,
       "read": 1,
       "role": "System Manager",
       "submit": 1,
       "write": 1
     },
     {
+      "amend": 1,
+      "cancel": 1,
+      "create": 1,
+      "delete": 1,
+      "read": 1,
+      "role": "Manufacturing Manager",
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "amend": 1,
+      "cancel": 1,
       "create": 1,
       "read": 1,
       "role": "Operator",

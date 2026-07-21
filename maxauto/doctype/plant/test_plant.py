@@ -53,7 +53,7 @@ class TestPlant(FrappeTestCase):
 	
 	def test_get_active_plants(self):
 		"""Test get_active_plants static method"""
-		from maxauto_custom.maxauto.plant.doctype.plant.plant import Plant
+		from maxauto_custom.maxauto.doctype.plant.plant import Plant
 		
 		self.plant.insert()
 		active_plants = Plant.get_active_plants()

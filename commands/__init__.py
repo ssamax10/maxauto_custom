@@ -1,1 +1,1 @@
-# Commands for asset_tools app
+# Commands for maxauto_custom app

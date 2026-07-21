@@ -1,0 +1,178 @@
+{% set company = frappe.get_doc("Company", doc.company) %}
+{% set company_logo = company.company_logo or "/assets/maxauto_custom/images/logo.svg" %}
+{% set plant_name = "" %}
+{% if doc.set_warehouse %}
+	{% set plant = frappe.db.get_value("Plant", {"default_rm_warehouse": doc.set_warehouse}, "plant_name") or frappe.db.get_value("Plant", {"default_inqa_warehouse": doc.set_warehouse}, "plant_name") or frappe.db.get_value("Plant", {"default_fg_warehouse": doc.set_warehouse}, "plant_name") %}
+	{% if plant %}{% set plant_name = plant %}{% endif %}
+{% endif %}
+<div class="print-container">
+	<table class="table-header">
+		<tr>
+			<td class="logo-cell">
+				{% if company_logo %}<img src="{{ company_logo }}" class="company-logo" alt="logo">{% endif %}
+			</td>
+			<td class="company-info">
+				<h2>{{ company.company_name }}</h2>
+				{% if company.address_html %}<div>{{ company.address_html }}</div>{% endif %}
+				{% if company.phone_no %}<div>Phone: {{ company.phone_no }}</div>{% endif %}
+				{% if company.email %}<div>Email: {{ company.email }}</div>{% endif %}
+			</td>
+			<td class="doc-title-cell">
+				<h1>Purchase Order</h1>
+				<div class="doc-meta">
+					<div><strong>PO No:</strong> {{ doc.name }}</div>
+					<div><strong>Date:</strong> {{ frappe.utils.formatdate(doc.transaction_date) }}</div>
+					{% if doc.schedule_date %}<div><strong>Required By:</strong> {{ frappe.utils.formatdate(doc.schedule_date) }}</div>{% endif %}
+					{% if plant_name %}<div><strong>Plant:</strong> {{ plant_name }}</div>{% endif %}
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<hr>
+
+	<table class="section-table">
+		<tr>
+			<td class="supplier-block">
+				<h4>Supplier</h4>
+				<div>{{ doc.supplier_name or doc.supplier }}</div>
+				{% if doc.supplier_address %}<div>{{ doc.supplier_address_display or doc.supplier_address }}</div>{% endif %}
+			</td>
+			<td class="ship-block">
+				<h4>Ship To</h4>
+				{% if doc.shipping_address %}<div>{{ doc.shipping_address_display or doc.shipping_address }}</div>{% endif %}
+				{% if doc.set_warehouse %}<div><strong>Warehouse:</strong> {{ doc.set_warehouse }}</div>{% endif %}
+			</td>
+		</tr>
+	</table>
+
+	<h4>Items</h4>
+	<table class="table table-bordered items-table">
+		<thead>
+			<tr>
+				<th style="width: 4%;">#</th>
+				<th style="width: 30%;">Item</th>
+				<th style="width: 8%;">Qty</th>
+				<th style="width: 8%;">UOM</th>
+				<th style="width: 12%;">Rate</th>
+				<th style="width: 12%;">Amount</th>
+				<th style="width: 14%;">Warehouse</th>
+				<th style="width: 12%;">Required By</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in doc.items %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>
+					{{ item.item_code }} - {{ item.item_name }}
+					{% if item.description %}<div class="small text-muted">{{ item.description }}</div>{% endif %}
+				</td>
+				<td class="text-right">{{ item.qty }}</td>
+				<td>{{ item.uom or item.stock_uom }}</td>
+				<td class="text-right">{{ frappe.utils.fmt_money(item.rate, doc.currency) }}</td>
+				<td class="text-right">{{ frappe.utils.fmt_money(item.amount, doc.currency) }}</td>
+				<td>{{ item.warehouse or '' }}</td>
+				<td>{{ frappe.utils.formatdate(item.schedule_date) if item.schedule_date else '' }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<table class="totals-table">
+		<tr>
+			<td class="totals-spacer">&nbsp;</td>
+			<td class="totals-col">
+				<table class="table table-bordered">
+					<tr>
+						<td>Net Total</td>
+						<td class="text-right">{{ frappe.utils.fmt_money(doc.total, doc.currency) }}</td>
+					</tr>
+					{% for tax in doc.taxes %}
+					<tr>
+						<td>{{ tax.account_head or tax.description }}</td>
+						<td class="text-right">{{ frappe.utils.fmt_money(tax.tax_amount, doc.currency) }}</td>
+					</tr>
+					{% endfor %}
+					<tr class="grand-total">
+						<td><strong>Grand Total</strong></td>
+						<td class="text-right"><strong>{{ frappe.utils.fmt_money(doc.grand_total, doc.currency) }}</strong></td>
+					</tr>
+					{% if doc.rounding_adjustment %}
+					<tr>
+						<td>Rounding Adjustment</td>
+						<td class="text-right">{{ frappe.utils.fmt_money(doc.rounding_adjustment, doc.currency) }}</td>
+					</tr>
+					<tr>
+						<td><strong>Rounded Total</strong></td>
+						<td class="text-right"><strong>{{ frappe.utils.fmt_money(doc.rounded_total, doc.currency) }}</strong></td>
+					</tr>
+					{% endif %}
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<h4>Terms & Conditions</h4>
+	<div class="terms-content">
+		{% if doc.terms %}{{ doc.terms }}{% else %}
+		<ol>
+			<li>Goods must be delivered as per the schedule date mentioned above.</li>
+			<li>Prices are inclusive of all taxes unless stated otherwise.</li>
+			<li>Payment terms: As agreed between the parties.</li>
+			<li>Quality and certification requirements must be strictly adhered to.</li>
+		</ol>
+		{% endif %}
+	</div>
+
+	<table class="footer-table">
+		<tr>
+			<td class="signature-block">
+				<div>For {{ company.company_name }}</div>
+				<br><br><br>
+				<div>Authorized Signatory</div>
+			</td>
+			<td class="contact-block">
+				<div><strong>If found, please contact:</strong></div>
+				<div>{{ company.company_name }}</div>
+				{% if company.phone_no %}<div>{{ company.phone_no }}</div>{% endif %}
+			</td>
+		</tr>
+	</table>
+</div>
+
+<style>
+.print-container { font-family: Arial, sans-serif; font-size: 12px; color: #333; }
+.table-header { width: 100%; }
+.table-header td { vertical-align: top; }
+.logo-cell { width: 18%; }
+.company-logo { max-width: 120px; max-height: 60px; }
+.company-info { width: 42%; }
+.company-info h2 { margin: 0 0 4px 0; font-size: 16px; }
+.doc-title-cell { width: 40%; text-align: right; }
+.doc-title-cell h1 { margin: 0 0 6px 0; font-size: 20px; }
+.doc-meta { text-align: right; }
+.section-table { width: 100%; margin-top: 10px; }
+.section-table td { vertical-align: top; padding: 6px; }
+.supplier-block { width: 50%; }
+.ship-block { width: 50%; }
+h4 { margin: 14px 0 6px 0; font-size: 13px; }
+.items-table { width: 100%; border-collapse: collapse; }
+.items-table th, .items-table td { border: 1px solid #ccc; padding: 5px; }
+.items-table th { background: #f5f5f5; text-align: left; }
+.text-right { text-align: right; }
+.small { font-size: 10px; }
+.text-muted { color: #888; }
+.totals-table { width: 100%; margin-top: 10px; }
+.totals-spacer { width: 50%; }
+.totals-col { width: 50%; }
+.totals-col table { width: 100%; border-collapse: collapse; }
+.totals-col td { border: 1px solid #ccc; padding: 5px; }
+.grand-total td { background: #f5f5f5; }
+.terms-content { margin-top: 4px; }
+.footer-table { width: 100%; margin-top: 30px; }
+.footer-table td { vertical-align: bottom; padding: 6px; }
+.signature-block { width: 60%; }
+.contact-block { width: 40%; }
+hr { border: none; border-top: 1px solid #ccc; margin: 10px 0; }
+</style>
