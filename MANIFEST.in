@@ -1,3 +1,4 @@
 recursive-include maxauto *.py *.js *.html *.json *.css *.md
+recursive-include maxauto_custom *.py *.txt
 recursive-include public *
 include LICENSE README.md
